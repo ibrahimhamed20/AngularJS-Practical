@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AngularJS - Simple Admin Panel</title>
+        <!-- Bootstrap 4 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <!-- Custom Style -->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        
+        <!-- AngularJS CDN -->
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+    </head>
+    <body ng-app="myApp">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-uppercase" href="#/!">
+                    <span>Dash</span><span>Board</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#/!">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!users">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!orders">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Statestics</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <hr>
+        
+        <div ng-view></div>
+        
+        <hr>
+        <!-- Start Footer -->
+        <footer class="text-center">
+            <p class="lead">All Right Reserved &copy; 2018 <strong>Dashboard</strong></p>
+        </footer>
+        
+        <!-- Custom AngularJs Code -->
+        <script src="js/script.js"></script>
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <!-- Bootstrap 4 JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </body>
+</html>
+        

@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "ProductName": "Futkiste",
+      "Quantity": "630",
+      "TotalPrice": "120",
+      "ShopCity": "Berlin"
+    },
+    {
+      "ProductName": "Empardos",
+      "Quantity": "720",
+      "TotalPrice": "692",
+      "ShopCity": "Dubai"
+    },
+    {
+      "ProductName": "Antogha",
+      "Quantity": "950",
+      "TotalPrice": "285",
+      "ShopCity": "seoul"
+    },
+    {
+      "ProductName": "Arofarn",
+      "Quantity": "470",
+      "TotalPrice": "549",
+      "ShopCity": "London"
+    },
+    {
+      "ProductName": "Bharages",
+      "Quantity": "390",
+      "TotalPrice": "873",
+      "ShopCity": "Cairo"
+    },
+    {
+      "ProductName": "Berglup",
+      "Quantity": "510",
+      "TotalPrice": "542",
+      "ShopCity": "Seoul"
+    },
+    {
+      "ProductName": "Delikesen",
+      "Quantity": "240",
+      "TotalPrice": "345",
+      "ShopCity": "Paris"
+    }
+  ]
+}

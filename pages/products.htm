@@ -1,1 +1,117 @@
-<br><h1 class="text-center">{{msg}}</h1><br>
+<br><h1 class="text-center">{{Title}}</h1><br>
+
+<section class="users text-center">
+    <div class="container">
+        
+        <!-- Table of Products -->
+        <table class="table table-striped table-hover table-bordered table-responsive-lg">
+            <thead>
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Price</th>
+                    <th scope="col">Shop City</th>
+                    <th scope="col">Controls</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="product in products">
+                    <th scope="row">#{{ $index + 1 }}</th>
+                    <td>{{ product.ProductName }}</td>
+                    <td><b>{{ product.Quantity }}</b> items</td>
+                    <td>&#36;<b>{{ product.TotalPrice }}</b></td>
+                    <td>{{ product.ShopCity }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editProduct" data-ng-click="selectProduct(product)">Update</button>
+                        <button class="btn btn-sm btn-danger" data-ng-click="removeProduct($index)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Message of Success -->
+        <div class="alert alert-success alert-dismissible" ng-if="Message">
+            <button type="button" class="close" data-dismiss="alert" data-ng-click="clearMessage()">&times;</button>
+            <strong>Success!</strong> {{Message}}
+        </div>
+        
+        <!-- Message of Error -->
+        <div class="alert alert-danger alert-dismissible" data-ng-if="errortext">
+            <button type="button" class="close" data-dismiss="alert" data-ng-click="clearError()">&times;</button>
+            <strong>Error!</strong> {{errortext}}
+        </div>
+        
+        <!-- Add New Order Button -->
+        <button type="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#newProduct">Add New Product</button><br><br>
+        
+        <!-- Add New Product Modal -->
+        <div class="modal fade" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="addNewProduct" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addNewProduct">Add New Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" role="form" name="formData">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Product Name..." required data-ng-model="product.ProductName" id="productname" name="productname">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Quantity..." required data-ng-model="product.Quantity" id="quantity" name="quantity">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Total Price..." required data-ng-model="product.TotalPrice" id="price" name="price">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Shop City..." required data-ng-model="product.ShopCity" id="city" name="city">
+                            </div>
+                            <button type="submit" data-ng-click="addProduct()" class="btn btn-primary pull-left" data-dismiss="modal">Save Product</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Edit Product Model -->
+        <div class="modal fade" id="editProduct" tabindex="-1" role="dialog" aria-labelledby="editProducts" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProducts">Edit Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Product Name..." required data-ng-model="selectedProduct.ProductName" id="productname" name="productname">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Quantity..." required data-ng-model="selectedProduct.Quantity" id="quantity" name="quantity">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Total Price..." required data-ng-model="selectedProduct.TotalPrice" id="price" name="price">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Shop City..." required data-ng-model="selectedProduct.ShopCity" id="city" name="city">
+                            </div>
+                            <button type="submit" data-ng-click="editProduct()" class="btn btn-primary pull-left" data-dismiss="modal">Update Product</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>

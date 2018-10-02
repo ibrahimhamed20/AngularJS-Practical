@@ -5,8 +5,7 @@ app.config(function ($routeProvider) {
         .when("/", {templateUrl : "pages/main.htm", controller  : "mainCtrl"})
         .when("/users", {templateUrl : "pages/users.htm", controller  : "userCtrl"})
         .when("/orders", {templateUrl : "pages/orders.htm", controller  : "orderCtrl"})
-        .when("/mails", {templateUrl : "pages/products.htm", controller  : "productCtrl"})
-        .otherwise("#", {template : "<h1 class='text-center'>None</h1><p class='text-center'>Nothing has been selected</p>"});
+        .when("/mails", {templateUrl : "pages/products.htm", controller  : "productCtrl"});
 });
 
 app.controller("mainCtrl", function ($scope) {
